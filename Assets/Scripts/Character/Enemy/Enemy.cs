@@ -53,8 +53,20 @@ public class Enemy : MonoBehaviour
 
     private void OnDie()
     {
-        Animator.SetTrigger("Die");
+        StartCoroutine(DieAndDestroy());
         enabled = false;
+    }
+
+    private IEnumerator DieAndDestroy()
+    {
+        // 애니메이션 실행
+        Animator.SetTrigger("Die");
+
+        // 애니메이션이 끝날 때까지 대기
+        yield return new WaitForSeconds(5.0f);
+
+        // 게임 오브젝트 제거
+        Main.Resource.Destroy(gameObject);
     }
 
 }
