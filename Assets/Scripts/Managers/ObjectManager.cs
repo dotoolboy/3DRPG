@@ -62,7 +62,7 @@ public class ObjectManager
                 uiEnemy.transform.SetParent(enemy.transform, false);
 
                 // UI_Enemy의 로컬 포지션을 조정하여 머리 위에 위치하도록 함
-                Vector3 offset = new Vector3(0f, 2f, 0f); // 예시로 설정한 오프셋 값
+                Vector3 offset = new Vector3(0f, 2f, 0f);
                 uiEnemy.transform.localPosition = offset;
             }
         }

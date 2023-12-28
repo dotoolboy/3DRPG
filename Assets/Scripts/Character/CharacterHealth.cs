@@ -23,8 +23,6 @@ public class CharacterHealth : MonoBehaviour
         }
         else if (CompareTag("Enemy"))
         {
-            //healthBar = transform.Find("UI_Enemy/EnemyHPBar").GetComponent<Image>();
-            //InitEnemyHealthUI();
             Transform enemyUI = transform.Find("UI_Enemy");
             healthBar = enemyUI.Find("EnemyHPBar").GetComponent<Image>();
             InitEnemyHealthUI();
@@ -69,8 +67,5 @@ public class CharacterHealth : MonoBehaviour
         {
             enemyHPBar.fillAmount = (float)health / maxHealth;
         }
-       
-        //Image enemyHPBar = GameObject.Find("EnemyHPBar").GetComponent<Image>();
-        //enemyHPBar.fillAmount = (float)health / maxHealth;
     }
 }
