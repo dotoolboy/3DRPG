@@ -5,9 +5,10 @@ using UnityEngine;
 public class ObjectManager
 {
     private Transform cameraLookPoint;
+    private GameObject enemyInstance;
     public void SpawnPlayer()
     {
-        Vector3 playerPosition = new Vector3(-2.8f, 4.7f, 2.7f);
+        Vector3 playerPosition = new(-2.8f, 4.7f, 3.2f);
         GameObject player = Main.Resource.InstantiatePrefab("Player", null, true);
 
         if (player != null)
@@ -45,18 +46,25 @@ public class ObjectManager
         }
     }
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(Vector3 ememyPosition)
     {
-        Vector3 ememyPosition = new Vector3(7.7f, 4.7f, 15f);
-        GameObject ememy = Main.Resource.InstantiatePrefab("Enemy", null, true);
+        //Vector3 ememyPosition = new Vector3(7.7f, 4.7f, 15f);
+        GameObject enemy = Main.Resource.InstantiatePrefab("Enemy", null, true);
 
-        if (ememy != null)
+        if (enemy != null)
         {
-            ememy.transform.position = ememyPosition; // 플레이어 위치 설정
-        }
-        else
-        {
-            Debug.LogError("플레이어를 소환할 수 없습니다.");
+            enemy.transform.position = ememyPosition; // 플레이어 위치 설정
+
+            GameObject uiEnemy = Main.Resource.InstantiatePrefab("UI_Enemy", null, true);
+            if (uiEnemy != null)
+            {
+                // UI_Enemy를 Enemy의 머리 위치에 배치
+                uiEnemy.transform.SetParent(enemy.transform, false);
+
+                // UI_Enemy의 로컬 포지션을 조정하여 머리 위에 위치하도록 함
+                Vector3 offset = new Vector3(0f, 2f, 0f); // 예시로 설정한 오프셋 값
+                uiEnemy.transform.localPosition = offset;
+            }
         }
     }
 }
