@@ -28,3 +28,4 @@
 - 몬스터 별로 머리위에 체력바 표
 
 ## 게임 스크린샷
+![Uploading ezgif.com-resize.gif…]()
