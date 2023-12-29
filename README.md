@@ -28,4 +28,4 @@
 - 몬스터 별로 머리위에 체력바 표
 
 ## 게임 스크린샷
-![Uploading ezgif.com-resize.gif…]()
+[![Uploading ezgif.com-resize.gif…]()](https://github.com/dotoolboy/3DRPG/issues/1#issue-2058986383)https://github.com/dotoolboy/3DRPG/issues/1#issue-2058986383
